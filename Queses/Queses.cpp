@@ -98,7 +98,12 @@ public:
 
 			FRONT = 0;
 
-			//
+			//Iterasi dari awal array hingga REAR
+			while (FRONT <= REAR)
+			{
+				cout << queue_array[FRONT] << "  ";
+				FRONT++;
+			}
 		}
 	}
 };
