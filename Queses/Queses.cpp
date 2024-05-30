@@ -69,8 +69,11 @@ public:
 
 	void display()
 	{
+		int FRONT_Position = FRONT;
+		int REAR_Position = REAR;
+
 		//cek apakah antrian kosong
-		if (FRONT == -1)
+		if (FRONT_Position == -1)
 		{
 			cout << "Queue is empty\n";
 			return;
@@ -78,12 +81,12 @@ public:
 		cout << "\nElements in the queueare...\n";
 
 		//jika FRONT <= REAR, iterasi dari FRONT hingga REAR
-		if (FRONT <= REAR)
+		if (FRONT_Position <= REAR_Position)
 		{
-			while (FRONT <= REAR)
+			while (FRONT_Position <= REAR_Position)
 			{
-				cout << queue_array[FRONT] << "  ";
-				FRONT++;
+				cout << queue_array[FRONT_Position] << "  ";
+				FRONT_Position++;
 			}
 			cout << endl;
 		}
@@ -92,17 +95,17 @@ public:
 			//jika FRONT > REAR, iterasi dari FRONT hingga akhir array
 			while (FRONT <= max - 1)
 			{
-				cout << queue_array[FRONT] << "  ";
-				FRONT++;
+				cout << queue_array[FRONT_Position] << "  ";
+				FRONT_Position++;
 			}
 
-			FRONT = 0;
+			FRONT_Position = 0;
 
 			//Iterasi dari awal array hingga REAR
-			while (FRONT <= REAR)
+			while (FRONT_Position <= REAR_Position)
 			{
-				cout << queue_array[FRONT] << "  ";
-				FRONT++;
+				cout << queue_array[FRONT_Position] << "  ";
+				FRONT_Position++;
 			}
 			cout << endl;
 		}
@@ -148,8 +151,11 @@ int main()
 				cout << "Invalid option!!" << endl;
 				break;
 			}
-
 			}
 		}
+		catch (exception& e) {
+			cout << "Check for the values entered." << endl;
+		}
 	}
+	return 0;
 }
